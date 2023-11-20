@@ -20,6 +20,7 @@ struct MealDetailView: View {
             
             if(viewModel.mealDetail != nil){
                 
+                //thumbnail image
                 AsyncImage(url: URL(string: viewModel.meal.strMealThumb))
                 { image in image.resizable() } placeholder: { Color.gray }
                     .aspectRatio(contentMode: .fit)
@@ -27,6 +28,7 @@ struct MealDetailView: View {
                     .frame(maxHeight: .infinity)
                 
                 VStack(alignment: .leading){
+                    
                     Text(viewModel.mealDetail!.strMeal.capitalized)
                         .font(.title)
                         .fontWeight(.semibold)
@@ -36,23 +38,18 @@ struct MealDetailView: View {
                         .font(.title2)
                         .fontWeight(.semibold)
                     
-                    
+                    //List of ingredients
                     ForEach(viewModel.ingredients) { ingredient in
-                        
                         HStack{
-//                            Text("\(ingredient.strMeasure) \(ingredient.strIngredient)")
                             Text(ingredient.strIngredient)
                                 .font(.body)
                             Spacer()
                             Text(ingredient.strMeasure)
                                 .font(.subheadline)
-                                
                         }
-                        
                         .padding(.vertical, 4)
                         
                         Divider()
-                        
                     }
                     
                     VStack(alignment: .leading) {
@@ -62,7 +59,6 @@ struct MealDetailView: View {
                             .padding(.vertical)
                         
                         
-//                        Text(mealDetail!.strInstructions)
                         Text(viewModel.addNumbersToNewlines(inputString: viewModel.mealDetail!.strInstructions))
                             .font(.body)
                     }
@@ -73,8 +69,6 @@ struct MealDetailView: View {
                 .padding()
                 
                 
-                
-                
             }else{
                 LoadingView()
             }
@@ -83,6 +77,8 @@ struct MealDetailView: View {
             
         }
         .overlay(alignment: .topLeading) {
+            
+            //Floating Back Button
             Button(action: {
                 presentationMode.wrappedValue.dismiss()
             }) {
@@ -102,15 +98,13 @@ struct MealDetailView: View {
         }
         
         .navigationBarBackButtonHidden(true)
-        //        .navigationTitle(meal.strMeal.capitalized)
         .task{
             
-            
+            //make API call for details of a specific meal
             do{
-                viewModel.meal = meal
-                try await viewModel.runTask()
+                try await viewModel.getMealDetail(meal: meal)
             }catch{
-                print("unexpected error")
+                print("error getting MealDetail")
             }
         }
     }

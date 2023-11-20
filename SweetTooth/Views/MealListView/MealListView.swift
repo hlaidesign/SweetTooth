@@ -13,9 +13,10 @@ struct MealListView: View {
     
     var body: some View {
         NavigationView {
-            
-            //List of name and images of desserts
+    
             if viewModel.meals != nil{
+                
+                //List of meals/desserts
                 List(viewModel.meals!, id: \.idMeal){ meal in
                     NavigationLink(destination: MealDetailView(meal: meal), label: {
                         HStack{
@@ -41,16 +42,13 @@ struct MealListView: View {
         }
         .task{
             do{
+                //make API call to get list of Desserts
                 try await viewModel.getMealList()
             }catch{
-                print("unexpected error")
+                print("Error getting MealList")
             }
         }
     }
-    
-    
-    
-    
     
 }
 

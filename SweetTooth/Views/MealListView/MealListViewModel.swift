@@ -14,12 +14,14 @@ final class MealListViewModel: ObservableObject {
     func getMealList() async throws{
         do{
             
+            //Create URL Object
             let endpoint = "https://themealdb.com/api/json/v1/1/filter.php?c=Dessert"
 
             guard let url = URL(string: endpoint) else{
                 throw GHError.invalidURL
             }
 
+            //Create URLSession from URL
             let (data, response) = try await URLSession.shared.data(from: url)
 
             guard let response = response as? HTTPURLResponse, response.statusCode == 200 else{
@@ -29,7 +31,10 @@ final class MealListViewModel: ObservableObject {
             do{
                 let decoder = JSONDecoder()
                 let mealsResponse = try decoder.decode(MealsResponse.self, from: data)
-                meals = mealsResponse.meals
+                DispatchQueue.main.async {
+                    self.meals = mealsResponse.meals
+                }
+                
             }catch{
                 throw GHError.invalidData
             }
