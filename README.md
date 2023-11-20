@@ -8,7 +8,7 @@ SweetTooth is an iOS app built in SwiftUI which displays a list of dessert recip
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/hlaidesign/SweetTooth.gitd
+   git clone https://github.com/hlaidesign/SweetTooth.git
    ```
 
 2. Navigate to the project directory:
