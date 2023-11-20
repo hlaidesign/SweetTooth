@@ -11,6 +11,8 @@
 		90A5C1C42B02D49E007C579B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90A5C1C32B02D49E007C579B /* ContentView.swift */; };
 		90A5C1C62B02D4A0007C579B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 90A5C1C52B02D4A0007C579B /* Assets.xcassets */; };
 		90A5C1C92B02D4A0007C579B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 90A5C1C82B02D4A0007C579B /* Preview Assets.xcassets */; };
+		90A5C1D02B068DE6007C579B /* RecipeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90A5C1CF2B068DE6007C579B /* RecipeManager.swift */; };
+		90A5C1D42B0B3E55007C579B /* MealView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90A5C1D32B0B3E55007C579B /* MealView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +21,8 @@
 		90A5C1C32B02D49E007C579B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		90A5C1C52B02D4A0007C579B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		90A5C1C82B02D4A0007C579B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		90A5C1CF2B068DE6007C579B /* RecipeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeManager.swift; sourceTree = "<group>"; };
+		90A5C1D32B0B3E55007C579B /* MealView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +57,8 @@
 			children = (
 				90A5C1C12B02D49E007C579B /* SweetToothApp.swift */,
 				90A5C1C32B02D49E007C579B /* ContentView.swift */,
+				90A5C1CF2B068DE6007C579B /* RecipeManager.swift */,
+				90A5C1D32B0B3E55007C579B /* MealView.swift */,
 				90A5C1C52B02D4A0007C579B /* Assets.xcassets */,
 				90A5C1C72B02D4A0007C579B /* Preview Content */,
 			);
@@ -137,8 +143,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				90A5C1D02B068DE6007C579B /* RecipeManager.swift in Sources */,
 				90A5C1C42B02D49E007C579B /* ContentView.swift in Sources */,
 				90A5C1C22B02D49E007C579B /* SweetToothApp.swift in Sources */,
+				90A5C1D42B0B3E55007C579B /* MealView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
